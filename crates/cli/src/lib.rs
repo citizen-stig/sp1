@@ -51,18 +51,19 @@ pub fn get_target() -> String {
     target_lexicon::HOST.to_string()
 }
 
-pub async fn get_toolchain_download_url(client: &Client, target: String) -> String {
+pub async fn get_toolchain_download_url(_client: &Client, target: String) -> String {
     // Get latest tag from https://api.github.com/repos/succinctlabs/rust/releases/latest
     // and use it to construct the download URL.
-    let json = client
-        .get("https://api.github.com/repos/succinctlabs/rust/releases/latest")
-        .send()
-        .await
-        .unwrap()
-        .json::<serde_json::Value>()
-        .await
-        .unwrap();
-    let tag = json["tag_name"].as_str().expect("Failed to download Succinct toolchain. Likely caused by GitHub rate limiting. Please try again using the --token flag. Docs: https://docs.succinct.xyz/getting-started/install.html#troubleshooting");
+    // let json = client
+    //     .get("https://api.github.com/repos/succinctlabs/rust/releases/latest")
+    //     .send()
+    //     .await
+    //     .unwrap()
+    //     .json::<serde_json::Value>()
+    //     .await
+    //     .unwrap();
+    // let tag = json["tag_name"].as_str().expect("Failed to download Succinct toolchain. Likely caused by GitHub rate limiting. Please try again using the --token flag. Docs: https://docs.succinct.xyz/getting-started/install.html#troubleshooting");
+    let tag = "succinct-v2024-08-01.1";
 
     let url = format!(
         "https://github.com/succinctlabs/rust/releases/download/{}/rust-toolchain-{}.tar.gz",
