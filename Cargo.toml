@@ -25,7 +25,7 @@ members = [
   "crates/recursion/core-v2",
   "crates/recursion/derive",
   "crates/recursion/gnark-cli",
-  "crates/recursion/gnark-ffi",
+#  "crates/recursion/gnark-ffi",
   "crates/recursion/program",
   "crates/sdk",
   "crates/cuda",
