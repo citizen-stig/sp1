@@ -16,7 +16,7 @@ slop-symmetric = { workspace = true }
 sp1-recursion-compiler = { workspace = true }
 sp1-primitives = { workspace = true }
 sp1-hypercube = { workspace = true }
-sp1-verifier = { workspace = true }
+sp1-verifier = { workspace = true, features = ["full"] }
 serde = { workspace = true }
 serde_json = { workspace = true }
 tracing = { workspace = true }
@@ -29,11 +29,11 @@ sha2 = { workspace = true }
 hex = { workspace = true }
 
 [build-dependencies]
-bindgen = { workspace = true }
+bindgen = { workspace = true, optional = true }
 cfg-if = { workspace = true }
 
 [features]
-native = []
+native = ["dep:bindgen"]
 groth16-cuda = []
 
 [lints]
