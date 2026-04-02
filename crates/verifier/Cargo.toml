@@ -22,12 +22,13 @@ cfg-if = "1.0.0"
 
 lazy_static = { version = "1.5.0", default-features = false, optional = true }
 bincode = { workspace = true, optional = true }
-serde = { workspace = true, features = ["derive"], optional = true }
-strum = { workspace = true, features = ["derive"], optional = true }
+serde = { workspace = true, features = ["derive"] }
+strum = { workspace = true, features = ["derive"] }
+
+# sp1
 sp1-hypercube = { workspace = true, optional = true }
 sp1-primitives = { workspace = true, optional = true }
 sp1-recursion-machine = { workspace = true, default-features = false, optional = true }
-sp1-recursion-executor = { workspace = true, default-features = false, optional = true }
 slop-algebra = { workspace = true, optional = true }
 slop-challenger = { workspace = true, optional = true }
 slop-primitives = { workspace = true, optional = true }
